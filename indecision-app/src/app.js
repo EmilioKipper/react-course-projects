@@ -11,6 +11,7 @@ const onFormSubmit = (e) => {
 
     const option = e.target.elements.option.value;
 
+    
     if (option) {
         app.options.push(option);
         e.target.elements.option.value = '';
