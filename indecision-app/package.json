@@ -2,6 +2,7 @@
   "name": "indecision-app",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Andrew Mead",
   "license": "MIT",
   "dependencies": {
     "babel-preset-env": "1.5.2",
