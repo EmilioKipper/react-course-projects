@@ -6,7 +6,7 @@ const addExpense = ({
     description = "",
     note = "",
     amount = 0,
-    createAt = 0
+    createdAt = 0
 } = {}) => ({
     type: "ADD_EXPENSE",
     expense: {
@@ -14,7 +14,7 @@ const addExpense = ({
         description,
         note,
         amount,
-        createAt
+        createdAt
     }
 });
 
@@ -135,9 +135,9 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
     return expenses
         .filter(expense => {
             const startDateMatch =
-                typeof startDate !== "number" || expense.createAt >= startDate;
+                typeof startDate !== "number" || expense.createdAt >= startDate;
             const endDateMatch =
-                typeof endDate !== "number" || expense.createAt <= endDate;
+                typeof endDate !== "number" || expense.createdAt <= endDate;
             const textMatch = expense.description
                 .toLowerCase()
                 .includes(text.toLowerCase());
@@ -148,7 +148,7 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
             console.log(sortBy);
             if (sortBy === "date") {
                 // Return newer first -1 = a, 1 = b
-                return a.createAt < b.createAt ? 1 : -1;
+                return a.createdAt < b.createdAt ? 1 : -1;
             } else if (sortBy === "amount") {
                 return a.amount > b.amount ? -1 : 1;
             }
@@ -171,10 +171,10 @@ store.subscribe(() => {
 });
 
 const exp1 = store.dispatch(
-    addExpense({ description: "rent", amount: 105, createAt: -21000 })
+    addExpense({ description: "rent", amount: 105, createdAt: -21000 })
 );
 const exp2 = store.dispatch(
-    addExpense({ description: "coffe", amount: 102, createAt: -1000 })
+    addExpense({ description: "coffe", amount: 102, createdAt: -1000 })
 );
 
 // store.dispatch(removeExpense({ id: exp1.expense.id }));
@@ -197,7 +197,7 @@ const demoState = {
             description: "January Rent",
             note: "this was the final payment for that address",
             amount: 54500,
-            createAt: 0
+            createdAt: 0
         }
     ],
     filters: {

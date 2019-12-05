@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { removeExpense } from "../actions/expenses";
 import { Link } from 'react-router-dom';
 
-const ExpenseListItem = ({ id, description, createAt, amount, dispatch }) => (
+const ExpenseListItem = ({ id, description, createdAt, amount, dispatch }) => (
     <div>
     <Link to={`/edit/${id}`}>
         <h3>{description}</h3>
     </Link>
         <p>
-            {amount} - {createAt}
+            {amount} - {createdAt}
         </p>
         
     </div>

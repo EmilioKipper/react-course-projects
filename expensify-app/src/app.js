@@ -30,7 +30,7 @@ store.dispatch(
 store.dispatch(
     addExpense({
         description: "Gas Bill",
-        createAt: 1000
+        createdAt: 1000
     })
 );
 
