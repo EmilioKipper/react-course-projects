@@ -1,11 +1,6 @@
 import React from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
-// // const date = new Date()
-// const now = moment();
-// console.log(now.format("Do MMM YYYY"));
-
 export default class ExpenseForm extends React.Component {
     constructor(props){
         super(props);
@@ -66,7 +61,6 @@ export default class ExpenseForm extends React.Component {
             this.setState(() => ({
                 error: ""
             }));
-            console.log('createdAt', this.state.createdAt)
             this.props.onSubmit({
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100,

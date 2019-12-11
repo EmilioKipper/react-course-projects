@@ -100,7 +100,6 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
     switch (action.type) {
         case "SET_TEXT_FILTER":
             const { text } = action;
-            console.log({...state,text})
             return {
                 ...state,
                 text
@@ -145,7 +144,6 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
             return startDateMatch && endDateMatch && textMatch;
         })
         .sort((a, b) => {
-            console.log(sortBy);
             if (sortBy === "date") {
                 // Return newer first -1 = a, 1 = b
                 return a.createdAt < b.createdAt ? 1 : -1;
@@ -167,7 +165,7 @@ const store = createStore(
 store.subscribe(() => {
     const state = store.getState();
     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-    console.log(visibleExpenses);
+    // console.log(visibleExpenses);
 });
 
 const exp1 = store.dispatch(

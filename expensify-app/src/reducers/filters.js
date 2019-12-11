@@ -20,15 +20,14 @@ export default (state = filtersReducerDefaultState, action) => {
         case "SORT_BY_AMOUNT":
             return {
                 ...state,
-                sortBy: action.sortBy
+                sortBy: 'amount'
             };
         case "SORT_BY_DATE":
             return {
                 ...state,
-                sortBy: action.sortBy
+                sortBy: 'date'
             };
         case "SET_START_DATE":
-            console.log('aaaction', action.date)
             return {
                 ...state,
                 startDate: action.date
